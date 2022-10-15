@@ -1,13 +1,18 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Button} from 'react-native';
 
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 
-const Home = () => {
+const Home = ({navigation}) => {
+  const handleNavigation = navigation => {
+    navigation.navigate('About');
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Home Screen</Text>
+      <Button title="About" onPress={() => handleNavigation(navigation)} />
     </View>
   );
 };
@@ -20,15 +25,15 @@ const About = () => {
   );
 };
 
-const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="About" component={About} />
-      </Drawer.Navigator>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="About" component={About} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
