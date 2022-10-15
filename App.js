@@ -1,39 +1,49 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import {StyleSheet, StatusBar} from 'react-native';
 
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 
-const Home = ({navigation}) => {
-  const handleNavigation = navigation => {
-    navigation.navigate('About');
-  };
+import LoginScreen from './src/screens/LoginScreen';
+import SignUpScreen from './src/screens/SignUpScreen';
+import DetailsScreen from './src/screens/DetailsScreen';
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Home Screen</Text>
-      <Button title="About" onPress={() => handleNavigation(navigation)} />
-    </View>
-  );
-};
-
-const About = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>About Screen</Text>
-    </View>
-  );
-};
-
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName="Home">
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="About" component={About} />
-      </Tab.Navigator>
+      <StatusBar backgroundColor={'#1390ff'} barStyle="light-content" />
+      <Stack.Navigator
+        initialRouteName="Login"
+        // screenOptions={{ headerShown: false }}
+      >
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="SignUp"
+          component={SignUpScreen}
+          options={{
+            headerTransparent: true,
+            headerTintColor: '#fff',
+            headerTitle: '',
+          }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          options={{
+            headerTransparent: true,
+            headerTintColor: '#fff',
+            headerBackgroundContainerStyle: {
+              backgroundColor: '#1390ff',
+            },
+          }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
