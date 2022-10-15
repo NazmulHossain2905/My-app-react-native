@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 
-import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 
 const Home = ({navigation}) => {
@@ -25,15 +25,15 @@ const About = () => {
   );
 };
 
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="About" component={About} />
-      </Stack.Navigator>
+      <Tab.Navigator initialRouteName="Home">
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="About" component={About} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
