@@ -3,6 +3,8 @@ import {SafeAreaView, Text, View, StyleSheet, Button} from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import AntDesign from 'react-native-vector-icons/AntDesign';
+
 const DetailsScreen = ({navigation}) => {
   const logout = async () => {
     await AsyncStorage.removeItem('@userData');
@@ -12,6 +14,7 @@ const DetailsScreen = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       <Text style={styles.text}>Details Screen</Text>
       <Button title="Log Out" onPress={logout} />
+      <AntDesign name="home" size={40} color="red" />
     </SafeAreaView>
   );
 };
