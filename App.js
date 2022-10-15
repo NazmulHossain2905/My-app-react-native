@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 30,
     color: '#f00',
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Light',
   },
 });
 
