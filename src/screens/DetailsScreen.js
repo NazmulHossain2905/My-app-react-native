@@ -1,10 +1,17 @@
 import React from 'react';
-import {SafeAreaView, Text, View, StyleSheet} from 'react-native';
+import {SafeAreaView, Text, View, StyleSheet, Button} from 'react-native';
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const DetailsScreen = ({navigation}) => {
+  const logout = async () => {
+    await AsyncStorage.removeItem('@userData');
+    navigation.replace('Login');
+  };
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.text}>Details Screen</Text>
+      <Button title="Log Out" onPress={logout} />
     </SafeAreaView>
   );
 };

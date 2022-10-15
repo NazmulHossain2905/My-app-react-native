@@ -4,6 +4,7 @@ import {StyleSheet, StatusBar} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 
+import SplashScreen from './src/screens/SplashScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 import DetailsScreen from './src/screens/DetailsScreen';
@@ -14,10 +15,12 @@ const App = () => {
   return (
     <NavigationContainer>
       <StatusBar backgroundColor={'#1390ff'} barStyle="light-content" />
-      <Stack.Navigator
-        initialRouteName="Login"
-        // screenOptions={{ headerShown: false }}
-      >
+      <Stack.Navigator initialRouteName="Splash">
+        <Stack.Screen
+          name="Splash"
+          component={SplashScreen}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name="Login"
           component={LoginScreen}
