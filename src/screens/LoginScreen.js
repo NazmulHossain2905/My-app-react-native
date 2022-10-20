@@ -71,7 +71,7 @@ const LoginScreen = ({navigation}) => {
       {/* check input username validation */}
       {userName < 1 && isUserNameError ? (
         <Text style={styles.errorText}>Please enter your username.</Text>
-      ) : userName != userDataObj.userName && userNameIsNotCorrect ? (
+      ) : userName != userDataObj?.userName && userNameIsNotCorrect ? (
         <Text style={styles.errorText}>Username is not correct.</Text>
       ) : (
         ''
@@ -88,7 +88,7 @@ const LoginScreen = ({navigation}) => {
       {/* check input password validation */}
       {password < 1 && isPasswordError ? (
         <Text style={styles.errorText}>Please enter your password.</Text>
-      ) : password != userDataObj.password && passwordIsNotCorrect ? (
+      ) : password != userDataObj?.password && passwordIsNotCorrect ? (
         <Text style={styles.errorText}>Password is not correct.</Text>
       ) : (
         ''

@@ -39,6 +39,7 @@ const App = () => {
           name="Details"
           component={DetailsScreen}
           options={{
+            headerLeft: () => null,
             headerTransparent: true,
             headerTintColor: '#fff',
             headerBackgroundContainerStyle: {
