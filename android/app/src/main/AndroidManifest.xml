@@ -22,5 +22,14 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
+<!-- ************************************** -->
+<!-- Below those line form google map start -->
+<!-- ************************************** -->
+      <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyDi_HWyZ8VnjKdJ7radtSL_8vSib2tnvm4"/>
+<!-- ************************************ -->
+<!-- Below those line form google map end -->
+<!-- ************************************ -->
     </application>
 </manifest>

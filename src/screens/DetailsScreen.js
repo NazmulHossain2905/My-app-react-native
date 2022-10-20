@@ -1,20 +1,22 @@
 import React from 'react';
 import {SafeAreaView, Text, View, StyleSheet, Button} from 'react-native';
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import MapView from 'react-native-maps';
 
 const DetailsScreen = ({navigation}) => {
-  const logout = async () => {
-    await AsyncStorage.removeItem('@userData');
-    navigation.replace('Login');
-  };
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.text}>Details Screen</Text>
-      <Button title="Log Out" onPress={logout} />
-      <AntDesign name="home" size={40} color="red" />
+      <MapView
+        // onRegionChange={v => console.log(v)}
+        style={{width: '100%', height: '100%'}}
+        initialRegion={{
+          latitude: 48.85691728176082,
+          longitude: 2.3532377365677513,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+      />
     </SafeAreaView>
   );
 };
