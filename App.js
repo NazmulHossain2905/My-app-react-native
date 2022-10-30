@@ -9,6 +9,7 @@ import LoginScreen from './src/screens/LoginScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 import DetailsScreen from './src/screens/DetailsScreen';
 import SocialShareScreen from './src/screens/SocialShareScreen';
+import SwiperScreen from './src/screens/SwiperScreen';
 
 const Stack = createStackNavigator();
 
@@ -43,6 +44,15 @@ const App = () => {
             headerTransparent: true,
             headerTintColor: '#fff',
             headerTitle: '',
+          }}
+        />
+        <Stack.Screen
+          name="Swiper"
+          component={SwiperScreen}
+          options={{
+            headerShown: true,
+            headerTintColor: '#fff',
+            headerStyle: {backgroundColor: '#1390ff'},
           }}
         />
         <Stack.Screen

@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View, Text, Pressable} from 'react-native';
 import Share from 'react-native-share';
 
-const SocialShareScreen = () => {
+const SocialShareScreen = ({navigation}) => {
   const onlyTextShare = async () => {
     const options = {
       message: 'this is a message',
@@ -34,13 +34,15 @@ const SocialShareScreen = () => {
         android_ripple={{color: '#ff0'}}>
         <Text style={styles.btnText}>Share only text</Text>
       </Pressable>
+
       <Pressable
+        onPress={() => navigation.navigate('Swiper')}
         style={({pressed}) => [
           styles.pressableBtn,
-          {backgroundColor: pressed ? '#000000' : '#f00'},
+          {backgroundColor: pressed ? '#000000' : '#1390ff'},
         ]}
         android_ripple={{color: '#ff0'}}>
-        <Text style={styles.btnText}>Share image</Text>
+        <Text style={styles.btnText}>Go to Swiper Screen</Text>
       </Pressable>
       <Pressable
         style={({pressed}) => [
@@ -48,7 +50,15 @@ const SocialShareScreen = () => {
           {backgroundColor: pressed ? '#000000' : '#f00'},
         ]}
         android_ripple={{color: '#ff0'}}>
-        <Text style={styles.btnText}>Share text and image</Text>
+        <Text style={styles.btnText}>Page Name</Text>
+      </Pressable>
+      <Pressable
+        style={({pressed}) => [
+          styles.pressableBtn,
+          {backgroundColor: pressed ? '#000000' : '#1390ff'},
+        ]}
+        android_ripple={{color: '#ff0'}}>
+        <Text style={styles.btnText}>Page Name</Text>
       </Pressable>
     </View>
   );
