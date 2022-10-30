@@ -45,12 +45,13 @@ const SocialShareScreen = ({navigation}) => {
         <Text style={styles.btnText}>Go to Swiper Screen</Text>
       </Pressable>
       <Pressable
+        onPress={() => navigation.navigate('Lottie')}
         style={({pressed}) => [
           styles.pressableBtn,
           {backgroundColor: pressed ? '#000000' : '#f00'},
         ]}
         android_ripple={{color: '#ff0'}}>
-        <Text style={styles.btnText}>Page Name</Text>
+        <Text style={styles.btnText}>Lottie Screen</Text>
       </Pressable>
       <Pressable
         style={({pressed}) => [

@@ -3,6 +3,8 @@ import {View, Text, StyleSheet, ActivityIndicator} from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import Lottie from 'lottie-react-native';
+
 const SplashScreen = ({navigation}) => {
   // when user click on login button
   const checkUserIsLoggedIn = async () => {
@@ -17,12 +19,16 @@ const SplashScreen = ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
       checkUserIsLoggedIn();
-    }, 1000);
+    }, 3000);
   }, []);
 
   return (
     <View style={styles.container}>
-      <ActivityIndicator size={'large'} color="#fff" />
+      <Lottie
+        source={require('../assets/lottieFiles/man-account.json')}
+        autoPlay
+        loop
+      />
     </View>
   );
 };
