@@ -34,6 +34,6 @@ I made this application for testing purpose.
   npm install lottie-react-native
 ```
 
-# Login Screen Demo - 1
+### Login Screen Demo - 1
 
 <img src='./src/assets/screenshots/loginScreen1.jpg' alt='Login Screen Demo - 1' width='300'>
