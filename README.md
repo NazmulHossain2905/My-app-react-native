@@ -4,7 +4,7 @@ I made this application for testing purpose.
 
 ## Uses 3rd party library on this project
 
-### React native maps
+#### React native maps
 
 ```bash
   npm install react-native-maps
