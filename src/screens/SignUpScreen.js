@@ -10,7 +10,7 @@ import {
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const LoginScreen = ({navigation}) => {
+const SignUpScreen = ({navigation}) => {
   const [fullName, setFullName] = useState('');
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
@@ -41,7 +41,7 @@ const LoginScreen = ({navigation}) => {
     ) {
       try {
         await AsyncStorage.setItem('@userData', JSON.stringify(userData));
-        navigation.replace('Details');
+        navigation.replace('Drawer');
       } catch (error) {
         console.log(error);
       }
@@ -62,6 +62,7 @@ const LoginScreen = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       <Text style={styles.text}>SignUp To My App</Text>
       <TextInput
+        placeholderTextColor="grey"
         style={styles.input}
         placeholder="Enter your full name"
         onChangeText={fullName => setFullName(fullName)}
@@ -79,6 +80,7 @@ const LoginScreen = ({navigation}) => {
       )}
 
       <TextInput
+        placeholderTextColor="grey"
         style={styles.input}
         placeholder="Enter your Username"
         onChangeText={userName => setUserName(userName)}
@@ -93,11 +95,13 @@ const LoginScreen = ({navigation}) => {
       )}
 
       {/* <TextInput
+      placeholderTextColor='grey'
         style={styles.input}
         placeholder="Enter your phone no."
         keyboardType="number-pad"
       /> */}
       <TextInput
+        placeholderTextColor="grey"
         style={styles.input}
         placeholder="Enter your password"
         secureTextEntry
@@ -116,6 +120,7 @@ const LoginScreen = ({navigation}) => {
       )}
 
       <TextInput
+        placeholderTextColor="grey"
         style={styles.input}
         placeholder="Confirm password"
         secureTextEntry
@@ -197,4 +202,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default SignUpScreen;

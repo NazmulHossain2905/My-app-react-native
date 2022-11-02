@@ -10,7 +10,7 @@ const SplashScreen = ({navigation}) => {
   const checkUserIsLoggedIn = async () => {
     try {
       const getUserData = await AsyncStorage.getItem('@userData');
-      navigation.replace(getUserData != null ? 'Share' : 'Login');
+      navigation.replace(getUserData != null ? 'Drawer' : 'Login');
     } catch (error) {
       console.log(error);
     }

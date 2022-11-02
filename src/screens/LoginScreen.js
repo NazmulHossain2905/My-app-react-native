@@ -46,7 +46,7 @@ const LoginScreen = ({navigation}) => {
         setUserDataObj(userDataObj);
 
         userName == userDataObj.userName && password == userDataObj.password
-          ? navigation.replace('Details')
+          ? navigation.replace('Drawer')
           : testUP();
       } catch (error) {
         console.log(error);
@@ -61,6 +61,7 @@ const LoginScreen = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       <Text style={styles.text}>Login To My App</Text>
       <TextInput
+        placeholderTextColor={'grey'}
         style={styles.input}
         placeholder="Enter your username"
         onChangeText={userName => setUserName(userName)}
@@ -78,6 +79,7 @@ const LoginScreen = ({navigation}) => {
       )}
 
       <TextInput
+        placeholderTextColor={'grey'}
         style={styles.input}
         placeholder="Enter your password"
         secureTextEntry
