@@ -9,6 +9,7 @@ import SocialShareScreen from '../screens/SocialShareScreen';
 import LottieScreen from '../screens/LottieScreen';
 import DetailsScreen from '../screens/DetailsScreen';
 import LoginScreen1 from '../screens/LoginScreen1';
+import LoginScreen2 from '../screens/LoginScreen2';
 
 const Drawer = createDrawerNavigator();
 const DrawerNavigation = () => {
@@ -19,6 +20,7 @@ const DrawerNavigation = () => {
       <Drawer.Screen name="Lottie" component={LottieScreen} />
       <Drawer.Screen name="GMap" component={DetailsScreen} />
       <Drawer.Screen name="Login1" component={LoginScreen1} />
+      <Drawer.Screen name="Login2" component={LoginScreen2} />
     </Drawer.Navigator>
   );
 };
