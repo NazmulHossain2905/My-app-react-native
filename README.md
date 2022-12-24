@@ -2,7 +2,7 @@
 
 I made this application for testing purpose.
 
-## Uses 3rd party library on this project
+## Uses 3rd party library to this project
 
 #### React native maps
 
